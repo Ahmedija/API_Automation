@@ -1,146 +1,175 @@
-import io.cucumber.java.eo.Do;
+package Model;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class House {
     private String id;
-    private Integer mlsId;
-    private String mlsListingId;
-    private String propertyType;
-    private String formattedAddress;
+    private int mls_id;
+    private String mls_listing_id;
+    private String property_type;
+    private String formatted_address;
     private String address;
     private String zip;
     private String city;
     private String state;
-
-    //Location
-    public List<Coordinates> Coordinates = new ArrayList<Coordinates>();
-
+    public Double[] location;
     private Integer bedrooms;
     private Integer bathrooms;
-    private String listDate;
-    private String mlsUpdateDate;
-    private String priceDisplay;
+    private String list_date;
+    private String mls_update_date;
+    private String price_display;
     private Integer price;
-    private Integer squareFeet;
+    private Integer square_feet;
 
+    private Hero hero;
 
     public String getId() {
         return id;
     }
+
     public void setId(String id) {
         this.id = id;
     }
+
     public int getMls_id() {
-        return mlsId;
+        return mls_id;
     }
-    public void setMlsId(int mlsId) {
-        this.mlsId = mlsId;
+
+    public void setMls_id(int mls_id) {
+        this.mls_id = mls_id;
     }
-    public String getMlsListingId() {
-        return mlsListingId;
+
+    public String getMls_listing_id() {
+        return mls_listing_id;
     }
-    public void setMlsListingId(String mlsListingId) {
-        this.mlsListingId = mlsListingId;
+
+    public void setMls_listing_id(String mls_listing_id) {
+        this.mls_listing_id = mls_listing_id;
     }
-    public String getPropertyType() {
-        return propertyType;
+
+    public String getProperty_type() {
+        return property_type;
     }
-    public void setPropertyType(String propertyType) {
-        this.propertyType = propertyType;
+
+    public void setProperty_type(String property_type) {
+        this.property_type = property_type;
     }
-    public String getFormattedAddress() {
-        return formattedAddress;
+
+    public String getFormatted_address() {
+        return formatted_address;
     }
-    public void setFormattedAddress(String formattedAddress) {
-        this.formattedAddress = formattedAddress;
+
+    public void setFormatted_address(String formatted_address) {
+        this.formatted_address = formatted_address;
     }
+
     public String getAddress() {
         return address;
     }
+
     public void setAddress(String address) {
         this.address = address;
     }
+
     public String getZip() {
         return zip;
     }
+
     public void setZip(String zip) {
         this.zip = zip;
     }
+
     public String getCity() {
         return city;
     }
+
     public void setCity(String city) {
         this.city = city;
     }
+
     public String getState() {
         return state;
     }
+
     public void setState(String state) {
         this.state = state;
+    }
+
+    public Double[] getLocation() {
+        return location;
+    }
+
+    public void setLocation(Double[] location) {
+        this.location = location;
     }
 
     public Integer getBedrooms() {
         return bedrooms;
     }
+
     public void setBedrooms(Integer bedrooms) {
         this.bedrooms = bedrooms;
     }
+
     public Integer getBathrooms() {
         return bathrooms;
     }
+
     public void setBathrooms(Integer bathrooms) {
         this.bathrooms = bathrooms;
     }
 
-    public String getListDate() {
-        return listDate;
-    }
-    public void setListDate(String listDate) {
-        this.listDate = listDate;
+    public String getList_date() {
+        return list_date;
     }
 
-    public String getMlsUpdateDate() {
-        return mlsUpdateDate;
-    }
-    public void setMlsUpdateDate(String mlsUpdateDate) {
-        this.mlsUpdateDate = mlsUpdateDate;
+    public void setList_date(String list_date) {
+        this.list_date = list_date;
     }
 
-    public String getPriceDisplay() {
-        return priceDisplay;
+    public String getMls_update_date() {
+        return mls_update_date;
     }
-    public void setPriceDisplay(String priceDisplay) {
-        this.priceDisplay = priceDisplay;
+
+    public void setMls_update_date(String mls_update_date) {
+        this.mls_update_date = mls_update_date;
+    }
+
+    public String getPrice_display() {
+        return price_display;
+    }
+
+    public void setPrice_display(String price_display) {
+        this.price_display = price_display;
     }
 
     public Integer getPrice() {
         return price;
     }
+
     public void setPrice(Integer price) {
         this.price = price;
     }
-    public Integer getSquareFeet() {
-        return squareFeet;
-    }
-    public void setSquareFeet(Integer squareFeet) {
-        this.squareFeet = squareFeet;
+
+    public Integer getSquare_feet() {
+        return square_feet;
     }
 
+    public void setSquare_feet(Integer square_feet) {
+        this.square_feet = square_feet;
+    }
 
-    public  class Coordinates{
-        private Double coordinates;
+    public Hero getHero() {
+        return hero;
+    }
 
-        public double getCoordinates() {
-            return coordinates;
-        }
-        public void setCoordinates(Double coordinates) {
-            this.coordinates = coordinates;
-        }
+    public void setHero(Hero hero) {
+        this.hero = hero;
     }
 }
+
+
+
 
 

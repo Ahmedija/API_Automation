@@ -1,13 +1,22 @@
 package Model;
 
 public class Hero {
-    private Double locations;
+    private String small;
+    private String medium;
 
-    public double getCoordinates() {
-        return locations;
+    public String getSmall() {
+        return small;
     }
 
-    public void setCoordinates(Double locations) {
-        this.locations = locations;
+    public void setSmall(String small) {
+        this.small = small;
+    }
+
+    public String getMedium() {
+        return medium;
+    }
+
+    public void setMedium(String medium) {
+        this.medium = medium;
     }
 }

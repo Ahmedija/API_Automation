@@ -6,15 +6,31 @@ import io.restassured.specification.RequestSpecification;
 
 public class ApiUtils {
 
-    public static Response GetHouses(){
-        RestAssured.baseURI ="http://localhost:3000";
+    public static Response getAllHouses(){
+        RestAssured.baseURI = ApiPathConstants.BASE_URL;
         RequestSpecification request = RestAssured.given();
-        request.param("price_gte", "450000");
-        request.param("price_lte", "666000");
-        request.param("city", "Austin");
-        Response response = request.get("/houses");
+        Response response = request.get(ApiPathConstants.HOUSES);
 
         return response;
     }
 
+    public static Response getHousesSpecificParams(String priceGte, String priceLte, String city){
+        RestAssured.baseURI = ApiPathConstants.BASE_URL;
+        RequestSpecification request = RestAssured.given();
+        request.param("price_gte", priceGte);
+        request.param("price_lte", priceLte);
+        request.param("city", city);
+        Response response = request.get(ApiPathConstants.HOUSES);
+
+        return response;
+    }
+
+    public static Response getHousesCustomParams(String paramKey, String paramValue){
+        RestAssured.baseURI = ApiPathConstants.BASE_URL;
+        RequestSpecification request = RestAssured.given();
+        request.param(paramKey, paramValue);
+        Response response = request.get(ApiPathConstants.HOUSES);
+
+        return response;
+    }
 }
